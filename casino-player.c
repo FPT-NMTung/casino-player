@@ -17,6 +17,7 @@ void menuAndChoice (int *choice) {
     do {
         vetifyInput = scanf("%d", choice);
         fflush(stdin);
+        //__fpurge(stdin);
     } while (vetifyInput != 1);
 }
 
@@ -44,8 +45,8 @@ void winOrLost (int check, int spend, int *chip) {
 
 //function to enter R and enter
 void pressRAndEnter(char *check) {
-    //getchar() or __fpurge with <stdio_ext.h>
     fflush(stdin);
+    //__fpurge(stdin);
     *check = getchar();
 }
 
@@ -56,7 +57,8 @@ void buyChip (int *money, int *chip) {
     do {
         printf("How much cash do you want to spend for chips?\n");
         check = scanf("%d", &spend);
-        fflush(stdin);//__fpurge(stdin)
+        fflush(stdin);
+        //__fpurge(stdin);
     } while (spend < 0 || check != 1);
 
     //if you spend more than money you have => error
@@ -75,7 +77,8 @@ void sellChip (int *money, int *chip) {
     do {
         printf("How many chips do you want to sell?\n");
         check = scanf("%d", &spend);
-        fflush(stdin);//__fpurge(stdin)
+        fflush(stdin);
+        //__fpurge(stdin);
     } while (spend < 0 || check != 1);
 
     //if you spend more than chip you have => error
@@ -95,6 +98,7 @@ void playCraps (int *chip) {
     do {
         printf("How many chips would you like to bet ?\n");
         fflush(stdin);
+        //__fpurge(stdin);
         checkType = scanf("%d", &spend);
     } while (checkType != 1);    
 
@@ -140,6 +144,7 @@ void playArup (int *chip) {
     do {
         printf("How many chips would you like to bet ?\n");
         fflush(stdin);
+        //__fpurge(stdin);
         checkType = scanf("%d", &spend);
     } while (checkType != 1);    
 
