@@ -82,7 +82,7 @@ void sellChip (int *money, int *chip) {
     } while (spend < 0 || check != 1);
 
     //if you spend more than chip you have => error
-    if (spend > chip) {
+    if (spend > *chip) {
         printf("Sorry you do not have that many chip. No chips sold.\n");
     } else {    
         *money += spend*10;
@@ -185,6 +185,11 @@ void displayMoneyChip (int money, int chip) {
     printf("You currently have $%d left and %d chips.\n", money, chip);
 }
 
+//SELECT 6
+void sellChipAndDisplayMoney(int money, int chip){
+    printf("after selling your chips, you have $%d. Thanks for playing\n", money + chip * 10);
+}
+
 //main
 int main () {
 
@@ -218,7 +223,7 @@ int main () {
                 break;
 
             case 6:
-                printf("after selling your chips, you have $%d. Thanks for playing\n", money + chip * 10);
+                sellChipAndDisplayMoney(money, chip);
                 break;
         }
     } while (choice != 6); 
