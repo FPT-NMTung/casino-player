@@ -173,7 +173,7 @@ void playArup (int *chip) {
 
             if (diceRoll > dice) {
                 winOrLost(1, spend, chip);
-            } else if (diceRoll <= 7) {                                        
+            } else if (diceRoll <= dice) {                                        
                 winOrLost(0, spend, chip);
             }     
         } 
